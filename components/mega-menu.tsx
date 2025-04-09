@@ -152,7 +152,7 @@ export function MegaMenu({ onClose, isOpen }: MegaMenuProps) {
                     onClick={onClose}
                   >
                     <div className={cn(
-                      "flex h-10 w-10 shrink-0 items-center justify-center rounded-md border bg-background transition-transform duration-200",
+                      "flex h-10 w-10 shrink-0 items-center justify-center rounded-md border bg-background transition-transform",
                       isRTL ? "group-hover:-translate-x-1" : "group-hover:translate-x-1"
                     )}>
                       {item.icon}
