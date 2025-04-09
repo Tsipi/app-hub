@@ -27,7 +27,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [authDialogOpen, setAuthDialogOpen] = useState(false)
   const [authMode, setAuthMode] = useState<"login" | "signup">("login")
-  const { t } = useLanguage()
+  const { t, isRTL } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -118,7 +118,7 @@ export default function Navbar() {
             {t.products}
           </AccordionTrigger>
           <AccordionContent>
-            <div className="pl-4 pt-2 space-y-6">
+            <div className={cn("pt-2 space-y-6", isRTL ? "pr-4" : "pl-4")}>
               {productCategories.map((category, index) => (
                 <div key={index} className="space-y-3">
                   <h3 className="text-sm font-semibold">{category.title}</h3>
@@ -134,7 +134,7 @@ export default function Navbar() {
                           {item.icon}
                         </div>
                         <span>{item.title}</span>
-                        <ChevronRight className="ml-auto h-4 w-4" />
+                        <ChevronRight className={cn("h-4 w-4", isRTL ? "rotate-180" : "")} />
                       </Link>
                     ))}
                   </div>
@@ -201,7 +201,7 @@ export default function Navbar() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="flex flex-col w-[300px] sm:w-[350px] p-0">
+            <SheetContent side={isRTL ? "right" : "left"} className="flex flex-col w-[300px] sm:w-[350px] p-0">
               <div className="flex justify-between items-center p-4 border-b">
                 <Logo size={24} />
                 <SheetClose asChild>

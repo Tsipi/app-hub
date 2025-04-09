@@ -1,4 +1,86 @@
-export const translations = {
+type Translations = {
+  about: string
+  products: string
+  contact: string
+  login: string
+  signup: string
+  viewAllProducts: string
+  heroTitle: string
+  heroSubtitle: string
+  featuredProducts: string
+  latestUpdates: string
+  readMore: string
+  exploreAll: string
+  categories: string
+  popularItems: string
+  newArrivals: string
+  specialOffers: string
+  viewDetails: string
+  addToCart: string
+  price: string
+  description: string
+  specifications: string
+  reviews: string
+  rating: string
+  relatedProducts: string
+  readyToStart: string
+  joinCustomers: string
+  noCreditCard: string
+  features: string[]
+  featureDescriptions: string[]
+  company: string
+  companyDescription: string
+  aiProducts: string
+  cloudProducts: string
+  securityProducts: string
+  analyticsProducts: string
+  resources: string
+  blog: string
+  documentation: string
+  support: string
+  community: string
+  legal: string
+  privacyPolicy: string
+  termsOfService: string
+  cookiePolicy: string
+  contactUs: string
+  allRightsReserved: string
+  accessibility: string
+  sitemap: string
+  aboutUs: string
+  careers: string
+  press: string
+  help: string
+  newsletter: string
+  newsletterPlaceholder: string
+  subscribe: string
+  socialMedia: string
+  paymentMethods: string
+  securePayment: string
+  customerService: string
+  satisfaction: string
+
+  // Mega Menu
+  softwareSolutions: string
+  cloudServices: string
+  analyticsDescription: string
+  ecommerceSuite: string
+  ecommerceDescription: string
+  securityDescription: string
+  integrationApi: string
+  integrationDescription: string
+  cloudDescription: string
+  dedicatedServers: string
+  serversDescription: string
+  mobileSolutions: string
+  mobileDescription: string
+  performanceOptimization: string
+  performanceDescription: string
+}
+
+export type TranslationKey = keyof Translations
+
+export const translations: Record<"en" | "fr" | "es" | "de" | "he", Translations> = {
   en: {
     // Navbar
     about: "About",
@@ -45,7 +127,7 @@ export const translations = {
     company: "Company",
     companyDescription: "Building amazing digital products, brands, and experiences.",
     aiProducts: "AI Solutions",
-    cloudProducts: "Cloud Services",
+    cloudProducts: "Cloud Hosting",
     securityProducts: "Security Tools",
     analyticsProducts: "Analytics Platform",
     resources: "Resources",
@@ -72,7 +154,24 @@ export const translations = {
     paymentMethods: "Payment Methods",
     securePayment: "Secure Payment",
     customerService: "Customer Service",
-    satisfaction: "100% Satisfaction Guarantee"
+    satisfaction: "100% Satisfaction Guarantee",
+
+    // Mega Menu
+    softwareSolutions: "Software Solutions",
+    cloudServices: "Cloud Services",
+    analyticsDescription: "Advanced data analytics and visualization tools",
+    ecommerceSuite: "E-commerce Suite",
+    ecommerceDescription: "Complete solution for online stores",
+    securityDescription: "Enterprise-grade security solutions",
+    integrationApi: "Integration APIs",
+    integrationDescription: "Connect your systems seamlessly",
+    cloudDescription: "Scalable and reliable cloud infrastructure",
+    dedicatedServers: "Dedicated Servers",
+    serversDescription: "High-performance dedicated hardware",
+    mobileSolutions: "Mobile Solutions",
+    mobileDescription: "Cross-platform mobile development tools",
+    performanceOptimization: "Performance Optimization",
+    performanceDescription: "Speed up your applications"
   },
   fr: {
     // Navbar
@@ -120,7 +219,7 @@ export const translations = {
     company: "Entreprise",
     companyDescription: "Création de produits numériques, marques et expériences exceptionnels.",
     aiProducts: "Solutions IA",
-    cloudProducts: "Services Cloud",
+    cloudProducts: "Hébergement Cloud",
     securityProducts: "Outils de Sécurité",
     analyticsProducts: "Plateforme d'Analyse",
     resources: "Ressources",
@@ -147,7 +246,24 @@ export const translations = {
     paymentMethods: "Moyens de Paiement",
     securePayment: "Paiement Sécurisé",
     customerService: "Service Client",
-    satisfaction: "Garantie Satisfaction 100%"
+    satisfaction: "Garantie Satisfaction 100%",
+
+    // Mega Menu
+    softwareSolutions: "Solutions Logicielles",
+    cloudServices: "Services Cloud",
+    analyticsDescription: "Outils avancés d'analyse et de visualisation de données",
+    ecommerceSuite: "Suite E-commerce",
+    ecommerceDescription: "Solution complète pour les boutiques en ligne",
+    securityDescription: "Solutions de sécurité de niveau entreprise",
+    integrationApi: "APIs d'Intégration",
+    integrationDescription: "Connectez vos systèmes en toute transparence",
+    cloudDescription: "Infrastructure cloud évolutive et fiable",
+    dedicatedServers: "Serveurs Dédiés",
+    serversDescription: "Matériel haute performance dédié",
+    mobileSolutions: "Solutions Mobiles",
+    mobileDescription: "Outils de développement multiplateforme",
+    performanceOptimization: "Optimisation des Performances",
+    performanceDescription: "Accélérez vos applications"
   },
   es: {
     // Navbar
@@ -195,7 +311,7 @@ export const translations = {
     company: "Empresa",
     companyDescription: "Creando productos digitales, marcas y experiencias increíbles.",
     aiProducts: "Soluciones de IA",
-    cloudProducts: "Servicios en la Nube",
+    cloudProducts: "Alojamiento en la Nube",
     securityProducts: "Herramientas de Seguridad",
     analyticsProducts: "Plataforma de Análisis",
     resources: "Recursos",
@@ -222,7 +338,24 @@ export const translations = {
     paymentMethods: "Métodos de Pago",
     securePayment: "Pago Seguro",
     customerService: "Servicio al Cliente",
-    satisfaction: "Garantía de Satisfacción 100%"
+    satisfaction: "Garantía de Satisfacción 100%",
+
+    // Mega Menu
+    softwareSolutions: "Soluciones de Software",
+    cloudServices: "Servicios en la Nube",
+    analyticsDescription: "Herramientas avanzadas de análisis y visualización de datos",
+    ecommerceSuite: "Suite de Comercio Electrónico",
+    ecommerceDescription: "Solución completa para tiendas en línea",
+    securityDescription: "Soluciones de seguridad de nivel empresarial",
+    integrationApi: "APIs de Integración",
+    integrationDescription: "Conecte sus sistemas sin problemas",
+    cloudDescription: "Infraestructura en la nube escalable y confiable",
+    dedicatedServers: "Servidores Dedicados",
+    serversDescription: "Hardware dedicado de alto rendimiento",
+    mobileSolutions: "Soluciones Móviles",
+    mobileDescription: "Herramientas de desarrollo multiplataforma",
+    performanceOptimization: "Optimización de Rendimiento",
+    performanceDescription: "Acelere sus aplicaciones"
   },
   de: {
     // Navbar
@@ -270,7 +403,7 @@ export const translations = {
     company: "Unternehmen",
     companyDescription: "Entwicklung außergewöhnlicher digitaler Produkte, Marken und Erlebnisse.",
     aiProducts: "KI-Lösungen",
-    cloudProducts: "Cloud-Dienste",
+    cloudProducts: "Cloud-Hosting",
     securityProducts: "Sicherheitstools",
     analyticsProducts: "Analytics-Plattform",
     resources: "Ressourcen",
@@ -297,7 +430,24 @@ export const translations = {
     paymentMethods: "Zahlungsmethoden",
     securePayment: "Sicherer Zahlung",
     customerService: "Kundenservice",
-    satisfaction: "100% Zufriedenheitsgarantie"
+    satisfaction: "100% Zufriedenheitsgarantie",
+
+    // Mega Menu
+    softwareSolutions: "Software-Lösungen",
+    cloudServices: "Cloud-Dienste",
+    analyticsDescription: "Fortschrittliche Datenanalyse- und Visualisierungstools",
+    ecommerceSuite: "E-Commerce-Suite",
+    ecommerceDescription: "Komplettlösung für Online-Shops",
+    securityDescription: "Sicherheitslösungen auf Unternehmensebene",
+    integrationApi: "Integrations-APIs",
+    integrationDescription: "Verbinden Sie Ihre Systeme nahtlos",
+    cloudDescription: "Skalierbare und zuverlässige Cloud-Infrastruktur",
+    dedicatedServers: "Dedizierte Server",
+    serversDescription: "Hochleistungs-Dedicated-Hardware",
+    mobileSolutions: "Mobile Lösungen",
+    mobileDescription: "Plattformübergreifende Entwicklungstools",
+    performanceOptimization: "Leistungsoptimierung",
+    performanceDescription: "Beschleunigen Sie Ihre Anwendungen"
   },
   he: {
     // Navbar
@@ -345,7 +495,7 @@ export const translations = {
     company: "חברה",
     companyDescription: "בונים מוצרים דיגיטליים, מותגים וחוויות מדהימים.",
     aiProducts: "פתרונות בינה מלאכותית",
-    cloudProducts: "שירותי ענן",
+    cloudProducts: "אירוח בענן",
     securityProducts: "כלי אבטחה",
     analyticsProducts: "פלטפורמת אנליטיקה",
     resources: "משאבים",
@@ -372,6 +522,23 @@ export const translations = {
     paymentMethods: "אמצעי תשלום",
     securePayment: "תשלום מאובטח",
     customerService: "שירות לקוחות",
-    satisfaction: "הבטחת שביעות רצון 100%"
+    satisfaction: "הבטחת שביעות רצון 100%",
+
+    // Mega Menu
+    softwareSolutions: "פתרונות תוכנה",
+    cloudServices: "שירותי ענן",
+    analyticsDescription: "כלים מתקדמים לניתוח והצגת נתונים",
+    ecommerceSuite: "חבילת מסחר אלקטרוני",
+    ecommerceDescription: "פתרון מלא לחנויות מקוונות",
+    securityDescription: "פתרונות אבטחה ברמת ארגון",
+    integrationApi: "ממשקי API לאינטגרציה",
+    integrationDescription: "חיבור חלק בין המערכות שלך",
+    cloudDescription: "תשתית ענן מדרגית ואמינה",
+    dedicatedServers: "שרתים ייעודיים",
+    serversDescription: "חומרה ייעודית בביצועים גבוהים",
+    mobileSolutions: "פתרונות מובייל",
+    mobileDescription: "כלי פיתוח חוצה פלטפורמות",
+    performanceOptimization: "אופטימיזציית ביצועים",
+    performanceDescription: "האצת האפליקציות שלך"
   }
 }; 

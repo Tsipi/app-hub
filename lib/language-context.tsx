@@ -9,6 +9,7 @@ interface LanguageContextType {
   currentLang: Language
   setCurrentLang: (lang: Language) => void
   t: typeof translations.en
+  isRTL: boolean
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
@@ -27,18 +28,20 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setMounted(true)
   }, [])
 
-  // Save language preference
+  // Save language preference and update document direction
   useEffect(() => {
     if (mounted) {
       localStorage.setItem("language", currentLang)
       document.documentElement.lang = currentLang
+      document.documentElement.dir = currentLang === "he" ? "rtl" : "ltr"
     }
   }, [currentLang, mounted])
 
   const value = {
     currentLang,
     setCurrentLang,
-    t: translations[currentLang]
+    t: translations[currentLang],
+    isRTL: currentLang === "he"
   }
 
   // Prevent hydration mismatch
