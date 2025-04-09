@@ -1,0 +1,11 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "logout": "Logout",
+    "home": "Home",
+    "profile": "Profile",
+    "settings": "Settings"
+  }
+} 

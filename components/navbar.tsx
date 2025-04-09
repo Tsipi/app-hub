@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils"
 import { useMobile } from "@/hooks/use-mobile"
 import { AuthDialog } from "@/components/auth-dialog"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { useLanguage } from "@/lib/language-context"
 
 // Import product categories from mega menu to reuse in mobile menu
 import { productCategories } from "@/components/mega-menu"
@@ -26,6 +27,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [authDialogOpen, setAuthDialogOpen] = useState(false)
   const [authMode, setAuthMode] = useState<"login" | "signup">("login")
+  const { t, isRTL } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,7 +68,7 @@ export default function Navbar() {
           pathname === "/about" ? "text-primary" : "text-muted-foreground",
         )}
       >
-        About
+        {t.about}
       </Link>
       <div className="relative" onMouseEnter={() => setMegaMenuOpen(true)}>
         <button
@@ -76,7 +78,7 @@ export default function Navbar() {
             pathname?.startsWith("/products") || megaMenuOpen ? "text-primary" : "text-muted-foreground",
           )}
         >
-          Products
+          {t.products}
           <ChevronDown className={cn("h-4 w-4 transition-transform duration-200", megaMenuOpen ? "rotate-180" : "")} />
         </button>
       </div>
@@ -87,7 +89,7 @@ export default function Navbar() {
           pathname === "/contact" ? "text-primary" : "text-muted-foreground",
         )}
       >
-        Contact Us
+        {t.contact}
       </Link>
     </>
   )
@@ -102,7 +104,7 @@ export default function Navbar() {
         )}
         onClick={() => setMobileMenuOpen(false)}
       >
-        About
+        {t.about}
       </Link>
 
       <Accordion type="single" collapsible className="w-full">
@@ -113,10 +115,10 @@ export default function Navbar() {
               pathname?.startsWith("/products") ? "text-primary" : "text-foreground",
             )}
           >
-            Products
+            {t.products}
           </AccordionTrigger>
           <AccordionContent>
-            <div className="pl-4 pt-2 space-y-6">
+            <div className={cn("pt-2 space-y-6", isRTL ? "pr-4" : "pl-4")}>
               {productCategories.map((category, index) => (
                 <div key={index} className="space-y-3">
                   <h3 className="text-sm font-semibold">{category.title}</h3>
@@ -132,7 +134,7 @@ export default function Navbar() {
                           {item.icon}
                         </div>
                         <span>{item.title}</span>
-                        <ChevronRight className="ml-auto h-4 w-4" />
+                        <ChevronRight className={cn("h-4 w-4", isRTL ? "rotate-180" : "")} />
                       </Link>
                     ))}
                   </div>
@@ -143,7 +145,7 @@ export default function Navbar() {
                 className="block text-sm font-medium text-primary hover:underline mt-4"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                View all products →
+                {t.viewAllProducts}
               </Link>
             </div>
           </AccordionContent>
@@ -158,7 +160,7 @@ export default function Navbar() {
         )}
         onClick={() => setMobileMenuOpen(false)}
       >
-        Contact Us
+        {t.contact}
       </Link>
     </div>
   )
@@ -185,10 +187,10 @@ export default function Navbar() {
             <LanguageSwitcher />
             <ModeToggle />
             <Button variant="outline" size="sm" onClick={() => openAuthDialog("login")}>
-              Login
+              {t.login}
             </Button>
             <Button size="sm" onClick={() => openAuthDialog("signup")}>
-              Sign Up
+              {t.signup}
             </Button>
           </div>
 
@@ -199,7 +201,7 @@ export default function Navbar() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="flex flex-col w-[300px] sm:w-[350px] p-0">
+            <SheetContent side={isRTL ? "right" : "left"} className="flex flex-col w-[300px] sm:w-[350px] p-0">
               <div className="flex justify-between items-center p-4 border-b">
                 <Logo size={24} />
                 <SheetClose asChild>
@@ -226,7 +228,7 @@ export default function Navbar() {
                       openAuthDialog("login")
                     }}
                   >
-                    Login
+                    {t.login}
                   </Button>
                   <Button
                     className="w-full"
@@ -235,7 +237,7 @@ export default function Navbar() {
                       openAuthDialog("signup")
                     }}
                   >
-                    Sign Up
+                    {t.signup}
                   </Button>
                 </div>
               </div>
