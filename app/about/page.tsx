@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 
 const teamMembers = [
   {
-    name: "John Smith",
+    name: "John Smithy",
     role: "CEO & Founder",
     image: "https://api.dicebear.com/7.x/pixel-art/svg?seed=John&backgroundColor=b6e3f4&mood=happy",
     linkedin: "https://linkedin.com/in/john-smith"
